@@ -2,6 +2,11 @@ require 'gelf/transport/udp'
 require 'gelf/transport/tcp'
 require 'gelf/transport/tcp_tls'
 
+begin
+  require 'yajl/json_gem'
+rescue LoadError
+end
+
 module GELF
   # Graylog2 notifier.
   class Notifier
